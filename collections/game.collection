@@ -1,10 +1,10 @@
 name: "main"
-instances {
+collection_instances {
   id: "ship"
-  prototype: "/game_elements/ship/ship.go"
+  collection: "/game_elements/ship/ship.collection"
   position {
-    x: 598.0
-    y: 342.0
+    x: 640.0
+    y: 360.0
     z: 0.5
   }
   rotation {
@@ -97,24 +97,6 @@ embedded_instances {
   "  id: \"small_asteroid_factory\"\n"
   "  type: \"factory\"\n"
   "  data: \"prototype: \\\"/game_elements/asteroid/asteroid_small.go\\\"\\n"
-  "load_dynamically: false\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"ship_bullet_factory\"\n"
-  "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/game_elements/bullet/bullet.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"

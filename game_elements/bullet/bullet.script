@@ -15,8 +15,10 @@ function update(self, dt)
 	position.x = position.x + self.dx * self.SPEED * dt
 	position.y = position.y + self.dy * self.SPEED * dt
 	go.set_position(position)
-	
-	if position.x > 1280 or position.x < 0 or position.y > 720 or position.y < 0 then
+
+	local SCREEN_WIDTH = tonumber(sys.get_config("display.width"))
+	local SCREEN_HEIGHT = tonumber(sys.get_config("display.height"))
+	if position.x > SCREEN_WIDTH or position.x < 0 or position.y > SCREEN_HEIGHT or position.y < 0 then
 		go.delete()
 	end
 end

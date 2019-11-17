@@ -26,7 +26,7 @@ images {
   image: "/game_elements/bullet/bullet.png"
 }
 images {
-  image: "/game_elements/title/title.png"
+  image: "/collections/title/title.png"
 }
 images {
   image: "/game_elements/ufo/ufo.png"
