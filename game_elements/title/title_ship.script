@@ -1,0 +1,8 @@
+function update(self, dt)
+	local position = go.get_position()
+	position.x = position.x + 200 * dt
+	if position.x >= 1344 then
+		position.x = -329
+	end
+	go.set_position(position)
+end

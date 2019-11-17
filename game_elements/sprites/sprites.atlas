@@ -1,0 +1,68 @@
+images {
+  image: "/game_elements/ship/ship.png"
+}
+images {
+  image: "/game_elements/asteroid/asteroid_big.png"
+}
+images {
+  image: "/game_elements/asteroid/asteroid_medium1.png"
+}
+images {
+  image: "/game_elements/asteroid/asteroid_medium2.png"
+}
+images {
+  image: "/game_elements/asteroid/asteroid_small1.png"
+}
+images {
+  image: "/game_elements/asteroid/asteroid_small2.png"
+}
+images {
+  image: "/game_elements/asteroid/asteroid_small3.png"
+}
+images {
+  image: "/game_elements/asteroid/asteroid_small4.png"
+}
+images {
+  image: "/game_elements/bullet/bullet.png"
+}
+images {
+  image: "/game_elements/title/title.png"
+}
+images {
+  image: "/game_elements/ufo/ufo.png"
+}
+animations {
+  id: "ship_thrust"
+  images {
+    image: "/game_elements/ship/thrust_high.png"
+  }
+  images {
+    image: "/game_elements/ship/thrust_low.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 5
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "explosion"
+  images {
+    image: "/game_elements/explosion/explosion1.png"
+  }
+  images {
+    image: "/game_elements/explosion/explosion2.png"
+  }
+  images {
+    image: "/game_elements/explosion/explosion3.png"
+  }
+  images {
+    image: "/game_elements/explosion/explosion4.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 5
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

@@ -1,0 +1,21 @@
+[bootstrap]
+main_collection = /collections/game.collectionc
+
+[script]
+shared_state = 1
+
+[display]
+width = 1280
+height = 720
+
+[android]
+input_method = HiddenInputField
+
+[project]
+title = Paper Space
+version = 0.0.3
+
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
+

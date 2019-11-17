@@ -1,0 +1,37 @@
+go.property('dx', 300)
+go.property('dy', 0)
+
+function init(self)
+	self.SPEED = 800
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	local position = go.get_position()
+	position.x = position.x + self.dx * self.SPEED * dt
+	position.y = position.y + self.dy * self.SPEED * dt
+	go.set_position(position)
+	
+	if position.x > 1280 or position.x < 0 or position.y > 720 or position.y < 0 then
+		go.delete()
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
