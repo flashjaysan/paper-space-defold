@@ -1,5 +1,5 @@
 images {
-  image: "/game_elements/ship/ship.png"
+  image: "/game_elements/sprites/ship.png"
 }
 images {
   image: "/game_elements/asteroid/asteroid_big.png"
@@ -23,21 +23,48 @@ images {
   image: "/game_elements/asteroid/asteroid_small4.png"
 }
 images {
-  image: "/game_elements/bullet/bullet.png"
+  image: "/game_elements/sprites/bullet.png"
 }
 images {
   image: "/collections/title/title.png"
 }
 images {
-  image: "/game_elements/ufo/ufo.png"
+  image: "/game_elements/sprites/ufo.png"
+}
+images {
+  image: "/game_elements/sprites/gamepad.png"
+}
+images {
+  image: "/game_elements/sprites/life1.png"
+}
+images {
+  image: "/game_elements/sprites/life2.png"
+}
+images {
+  image: "/game_elements/sprites/life3.png"
+}
+images {
+  image: "/game_elements/sprites/press_start_to_play.png"
+}
+images {
+  image: "/game_elements/sprites/score.png"
+}
+images {
+  image: "/game_elements/sprites/udlr.png"
+}
+images {
+  image: "/game_elements/sprites/wasd.png"
+}
+images {
+  image: "/game_elements/sprites/zqsd.png"
 }
 animations {
   id: "ship_thrust"
   images {
-    image: "/game_elements/ship/thrust_high.png"
+    image: "/game_elements/sprites/thrust_high.png"
   }
   images {
-    image: "/game_elements/ship/thrust_low.png"
+    image: "/game_elements/sprites/thrust_low.png"
   }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 5
@@ -47,16 +74,16 @@ animations {
 animations {
   id: "explosion"
   images {
-    image: "/game_elements/explosion/explosion1.png"
+    image: "/game_elements/sprites/explosion1.png"
   }
   images {
-    image: "/game_elements/explosion/explosion2.png"
+    image: "/game_elements/sprites/explosion2.png"
   }
   images {
-    image: "/game_elements/explosion/explosion3.png"
+    image: "/game_elements/sprites/explosion3.png"
   }
   images {
-    image: "/game_elements/explosion/explosion4.png"
+    image: "/game_elements/sprites/explosion4.png"
   }
   playback: PLAYBACK_ONCE_FORWARD
   fps: 5
