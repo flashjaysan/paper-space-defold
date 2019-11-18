@@ -19,8 +19,8 @@ key_trigger {
   action: "action"
 }
 key_trigger {
-  input: KEY_BACKSPACE
-  action: "cancel"
+  input: KEY_ENTER
+  action: "start"
 }
 key_trigger {
   input: KEY_Q
@@ -67,14 +67,6 @@ gamepad_trigger {
   action: "action"
 }
 gamepad_trigger {
-  input: GAMEPAD_RPAD_DOWN
-  action: "cancel"
-}
-gamepad_trigger {
   input: GAMEPAD_START
-  action: "action"
-}
-gamepad_trigger {
-  input: GAMEPAD_BACK
-  action: "cancel"
+  action: "start"
 }

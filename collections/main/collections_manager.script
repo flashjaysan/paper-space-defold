@@ -24,7 +24,7 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-	if action_id == hash('action') and action.pressed then
+	--[[if action_id == hash('action') and action.pressed then
 		if self.state == 'title' then
 			self.state = 'game'
 			msg.post('.', 'load_game')
@@ -35,5 +35,5 @@ function on_input(self, action_id, action)
 			self.state = 'title'
 			msg.post('.', 'load_title')
 		end
-	end
+	end--]]
 end

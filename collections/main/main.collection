@@ -1,4 +1,4 @@
-name: "default"
+name: "main"
 instances {
   id: "collections_manager"
   prototype: "/collections/main/collections_manager.go"
