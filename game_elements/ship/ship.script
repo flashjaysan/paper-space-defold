@@ -11,6 +11,7 @@ function init(self)
 	self.action = false
 
 	-- set constants and instance values
+	self.lives = 3
 	self.ANGULAR_SPEED = 200
 	self.speed = 0
 	self.MAX_SPEED = 600
@@ -23,10 +24,14 @@ end
 
 
 function reset(self)
+	self.lives = self.lives - 1
 	self.speed = 0
 	self.dx = 0
 	self.dy = 0
 	go.set_position(vmath.vector3(tonumber(sys.get_config("display.width")) / 2, tonumber(sys.get_config("display.height")) / 2, 0.5))
+	if self.lives <= 0 then
+		msg.post('main:/collections_manager', 'load_gameover')
+	end
 end
 
 

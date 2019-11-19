@@ -34,7 +34,7 @@ embedded_components {
 embedded_components {
   id: "game_proxy"
   type: "collectionproxy"
-  data: "collection: \"/collections/game.collection\"\n"
+  data: "collection: \"/collections/game/game.collection\"\n"
   "exclude: false\n"
   ""
   position {
@@ -52,7 +52,7 @@ embedded_components {
 embedded_components {
   id: "gameover_proxy"
   type: "collectionproxy"
-  data: "collection: \"/collections/gameover.collection\"\n"
+  data: "collection: \"/collections/gameover/gameover.collection\"\n"
   "exclude: false\n"
   ""
   position {

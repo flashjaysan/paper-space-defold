@@ -58,6 +58,12 @@ images {
 images {
   image: "/assets/zqsd.png"
 }
+images {
+  image: "/assets/game_over.png"
+}
+images {
+  image: "/assets/press_start.png"
+}
 animations {
   id: "ship_thrust"
   images {

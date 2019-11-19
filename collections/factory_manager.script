@@ -1,5 +1,7 @@
 function init(self)
-	self.number = 0
+	self.MIN_SPAWN_TIME = 0.5
+	self.spawn_time_to_reach = 5
+	self.spawn_timer = 5
 end
 
 function final(self)
@@ -8,8 +10,16 @@ function final(self)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+	self.spawn_timer = self.spawn_timer + dt
+	if self.spawn_timer >= self.spawn_time_to_reach then
+		self.spawn_timer = 0
+
+		factory.create('#big_asteroid_factory')
+		self.spawn_time_to_reach = self.spawn_time_to_reach - 0.4
+		if self.spawn_time_to_reach < self.MIN_SPAWN_TIME then
+			self.spawn_time_to_reach = self.MIN_SPAWN_TIME
+		end
+	end
 end
 
 function on_message(self, message_id, message, sender)
