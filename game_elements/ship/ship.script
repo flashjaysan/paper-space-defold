@@ -21,6 +21,15 @@ function init(self)
 	self.position = go.get_position()
 end
 
+
+function reset(self)
+	self.speed = 0
+	self.dx = 0
+	self.dy = 0
+	go.set_position(vmath.vector3(tonumber(sys.get_config("display.width")) / 2, tonumber(sys.get_config("display.height")) / 2, 0.5))
+end
+
+
 function update(self, dt)
 	self.angle = go.get('.', 'euler.z')
 	self.position = go.get_position()
@@ -29,6 +38,7 @@ function update(self, dt)
 	set_position(self)
 	fire_bullet(self)
 end
+
 
 function on_input(self, action_id, action)
 	if action_id == hash('left') then
@@ -48,12 +58,26 @@ function on_input(self, action_id, action)
 	end	
 end
 
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash('collision_response') then
+		if message.other_group == hash('asteroid') then
+			local position = go.get_position()
+			position.z = 0.01
+			factory.create('game:/factories#explosion_factory', position)
+			reset(self)
+		end
+	end
+end
+
+
 function set_position(self)
 	self.position.x = self.position.x + self.dx
 	self.position.y = self.position.y + self.dy
 	wrap_around(self)
 	go.set_position(self.position)
 end
+
 
 function wrap_around(self)
 	local SCREEN_WIDTH = tonumber(sys.get_config("display.width"))
@@ -72,16 +96,19 @@ function wrap_around(self)
 	end
 end
 
+
 function calculate_velocity(self, dt)
 	self.dx = math.cos(math.rad(self.angle)) * self.speed * dt
 	self.dy = math.sin(math.rad(self.angle)) * self.speed * dt
 end
+
 
 function cap_speed(self)
 	if self.speed > self.MAX_SPEED then
 		self.speed = self.MAX_SPEED
 	end
 end
+
 
 function set_angle_and_speed_from_input(self, dt)
 	if self.left then
@@ -112,6 +139,7 @@ function set_angle_and_speed_from_input(self, dt)
 	end
 	cap_speed(self)
 end
+
 
 function fire_bullet(self)
 	if self.action then

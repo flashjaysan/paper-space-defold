@@ -1,4 +1,44 @@
 name: "game"
+instances {
+  id: "asteroid_big"
+  prototype: "/game_elements/asteroid/asteroid_big.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "score"
+  prototype: "/game_elements/score/score.go"
+  position {
+    x: 134.0
+    y: 655.0
+    z: 0.6
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
 collection_instances {
   id: "ship"
   collection: "/game_elements/ship/ship.collection"

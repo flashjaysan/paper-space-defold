@@ -1,9 +1,11 @@
 go.property('dx', 300)
 go.property('dy', 0)
 
+
 function init(self)
 	self.SPEED = 800
 end
+
 
 function update(self, dt)
 	local position = go.get_position()
@@ -18,7 +20,14 @@ function update(self, dt)
 	end
 end
 
+
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+	if message_id == hash('collision_response') then
+		if message.other_group == hash('asteroid') then
+			local position = go.get_position()
+			position.z = 0.01
+			factory.create('factories#explosion_factory', position)
+			go.delete()
+		end
+	end
 end

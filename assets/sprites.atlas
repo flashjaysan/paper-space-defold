@@ -1,0 +1,95 @@
+images {
+  image: "/assets/ship.png"
+}
+images {
+  image: "/assets/asteroid_big.png"
+}
+images {
+  image: "/assets/asteroid_medium1.png"
+}
+images {
+  image: "/assets/asteroid_medium2.png"
+}
+images {
+  image: "/assets/asteroid_small1.png"
+}
+images {
+  image: "/assets/asteroid_small2.png"
+}
+images {
+  image: "/assets/asteroid_small3.png"
+}
+images {
+  image: "/assets/asteroid_small4.png"
+}
+images {
+  image: "/assets/bullet.png"
+}
+images {
+  image: "/collections/title/title.png"
+}
+images {
+  image: "/assets/ufo.png"
+}
+images {
+  image: "/assets/gamepad.png"
+}
+images {
+  image: "/assets/life1.png"
+}
+images {
+  image: "/assets/life2.png"
+}
+images {
+  image: "/assets/life3.png"
+}
+images {
+  image: "/assets/press_start_to_play.png"
+}
+images {
+  image: "/assets/score.png"
+}
+images {
+  image: "/assets/udlr.png"
+}
+images {
+  image: "/assets/wasd.png"
+}
+images {
+  image: "/assets/zqsd.png"
+}
+animations {
+  id: "ship_thrust"
+  images {
+    image: "/assets/thrust_high.png"
+  }
+  images {
+    image: "/assets/thrust_low.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 5
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "explosion"
+  images {
+    image: "/assets/explosion1.png"
+  }
+  images {
+    image: "/assets/explosion2.png"
+  }
+  images {
+    image: "/assets/explosion3.png"
+  }
+  images {
+    image: "/assets/explosion4.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 5
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

@@ -1,6 +1,6 @@
 components {
-  id: "asteroid_big"
-  component: "/game_elements/asteroid/asteroid_big.script"
+  id: "asteroid_medium"
+  component: "/game_elements/asteroid/asteroid_medium.script"
   position {
     x: 0.0
     y: 0.0
@@ -62,7 +62,7 @@ embedded_components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "tile_set: \"/game_elements/sprites/sprites.atlas\"\n"
+  data: "tile_set: \"/assets/sprites.atlas\"\n"
   "default_animation: \"asteroid_medium1\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"

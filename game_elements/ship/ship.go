@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "ship_sprite"
   type: "sprite"
-  data: "tile_set: \"/game_elements/sprites/sprites.atlas\"\n"
+  data: "tile_set: \"/assets/sprites.atlas\"\n"
   "default_animation: \"ship\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
@@ -41,8 +41,8 @@ embedded_components {
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"default\"\n"
-  "mask: \"default\"\n"
+  "group: \"ship\"\n"
+  "mask: \"asteroid\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
@@ -81,7 +81,7 @@ embedded_components {
 embedded_components {
   id: "thrust_sprite"
   type: "sprite"
-  data: "tile_set: \"/game_elements/sprites/sprites.atlas\"\n"
+  data: "tile_set: \"/assets/sprites.atlas\"\n"
   "default_animation: \"ship_thrust\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
