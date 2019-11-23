@@ -1,6 +1,6 @@
 components {
-  id: "asteroid_medium"
-  component: "/game_elements/asteroid/asteroid_medium.script"
+  id: "asteroid_small"
+  component: "/collections/game/asteroid/asteroid_small.script"
   position {
     x: 0.0
     y: 0.0
@@ -41,7 +41,7 @@ embedded_components {
   "    index: 0\n"
   "    count: 1\n"
   "  }\n"
-  "  data: 55.652\n"
+  "  data: 31.0475\n"
   "}\n"
   "linear_damping: 0.0\n"
   "angular_damping: 0.0\n"
@@ -63,7 +63,7 @@ embedded_components {
   id: "sprite"
   type: "sprite"
   data: "tile_set: \"/assets/sprites.atlas\"\n"
-  "default_animation: \"asteroid_medium1\"\n"
+  "default_animation: \"asteroid_small1\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""

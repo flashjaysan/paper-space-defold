@@ -1,7 +1,7 @@
 name: "ship"
 instances {
   id: "ship"
-  prototype: "/game_elements/ship/ship.go"
+  prototype: "/collections/game/ship/ship.go"
   position {
     x: 0.0
     y: 0.0
@@ -25,7 +25,7 @@ embedded_instances {
   data: "embedded_components {\n"
   "  id: \"bullets_factory\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/game_elements/bullet/bullet.go\\\"\\n"
+  "  data: \"prototype: \\\"/collections/game/bullet/bullet.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"

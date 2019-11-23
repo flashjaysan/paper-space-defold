@@ -1,6 +1,6 @@
 components {
   id: "asteroid_big"
-  component: "/game_elements/asteroid/asteroid_big.script"
+  component: "/collections/game/asteroid/asteroid_big.script"
   position {
     x: 0.0
     y: 0.0

@@ -4,7 +4,7 @@ embedded_instances {
   id: "background"
   data: "components {\n"
   "  id: \"background\"\n"
-  "  component: \"/game_elements/background/background.tilemap\"\n"
+  "  component: \"/common/background/background.tilemap\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

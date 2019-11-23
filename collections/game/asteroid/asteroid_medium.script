@@ -2,19 +2,13 @@ function init(self)
 	self.SIZE = 100
 	math.randomseed(os.time())
 	self.SPEED = math.random(200) + 100
-	self.angular_speed = math.random(-360, 360)
+	self.angular_speed = math.random(360) - 180
 	random_direction(self)
 end
 
 
-function final(self)
-	-- Add finalization code here
-	-- Remove this function if not needed
-end
-
-
 function update(self, dt)
-	go.set('.', 'euler.z', (go.get('.', 'euler.z') + self.angular_speed * dt))
+	go.set('.', 'euler.z', go.get('.', 'euler.z') + self.angular_speed * dt)
 	local position = go.get_position()
 	position.x = position.x + self.direction.x * self.SPEED * dt
 	position.y = position.y + self.direction.y * self.SPEED * dt
@@ -41,9 +35,8 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash('collision_response') then
 		if message.other_group == hash('bullet') then
 			msg.post('score', 'medium_destroyed')
-			local position = go.get_position()
-			factory.create('factories#small_asteroid_factory', position)
-			factory.create('factories#small_asteroid_factory', position)
+			factory.create('factories#small_asteroid_factory')
+			factory.create('factories#small_asteroid_factory')
 			go.delete()
 		end
 	end

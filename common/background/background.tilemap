@@ -1,4 +1,4 @@
-tile_set: "/game_elements/background/background.tilesource"
+tile_set: "/common/background/background.tilesource"
 layers {
   id: "layer1"
   z: 0.0

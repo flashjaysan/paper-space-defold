@@ -1,6 +1,6 @@
 components {
   id: "score"
-  component: "/game_elements/score/score.script"
+  component: "/collections/game/score/score.script"
   position {
     x: 0.0
     y: 0.0
@@ -72,7 +72,7 @@ embedded_components {
   "blend_mode: BLEND_MODE_ALPHA\n"
   "line_break: false\n"
   "text: \"0\"\n"
-  "font: \"/game_elements/score/score_font.font\"\n"
+  "font: \"/collections/game/score/score_font.font\"\n"
   "material: \"/builtins/fonts/label.material\"\n"
   ""
   position {

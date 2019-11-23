@@ -1,6 +1,6 @@
 components {
   id: "explosion"
-  component: "/game_elements/explosion/explosion.script"
+  component: "/collections/game/explosion/explosion.script"
   position {
     x: 0.0
     y: 0.0

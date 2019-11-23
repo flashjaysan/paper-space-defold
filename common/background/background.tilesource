@@ -1,4 +1,4 @@
-image: "/game_elements/background/tileset_carreaux.png"
+image: "/common/background/tileset_carreaux.png"
 tile_width: 40
 tile_height: 40
 tile_margin: 0

@@ -1,20 +1,16 @@
 function init(self)
+	self.PADDING = 100
 	self.SIZE = 100
 	math.randomseed(os.time())
 	self.SPEED = math.random(200) + 100
-	self.angular_speed = math.random(-360, 360)
+	self.angular_speed = math.random(360) - 180
+	random_position(self)
 	random_direction(self)
 end
 
 
-function final(self)
-	-- Add finalization code here
-	-- Remove this function if not needed
-end
-
-
 function update(self, dt)
-	go.set('.', 'euler.z', (go.get('.', 'euler.z') + self.angular_speed * dt))
+	go.set('.', 'euler.z', go.get('.', 'euler.z') + self.angular_speed * dt)
 	local position = go.get_position()
 	position.x = position.x + self.direction.x * self.SPEED * dt
 	position.y = position.y + self.direction.y * self.SPEED * dt
@@ -40,10 +36,30 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash('collision_response') then
 		if message.other_group == hash('bullet') then
-			msg.post('score', 'small_destroyed')
+			msg.post('score', 'big_destroyed')
+			factory.create('factories#medium_asteroid_factory')
+			factory.create('factories#medium_asteroid_factory')
 			go.delete()
 		end
 	end
+end
+
+
+function random_position(self)
+	local SCREEN_WIDTH = tonumber(sys.get_config("display.width"))
+	local SCREEN_HEIGHT = tonumber(sys.get_config("display.height"))
+	local position = vmath.vector3(math.random(SCREEN_WIDTH), math.random(SCREEN_HEIGHT), 0.1)
+	local rand4 = math.random(4)
+	if rand4 == 1 then
+		position.x = -self.SIZE
+	elseif rand4 == 2 then
+		position.x = SCREEN_WIDTH + self.SIZE
+	elseif rand4 == 3 then
+		position.y = -self.SIZE
+	elseif rand4 == 4 then
+		position.y = SCREEN_HEIGHT + self.SIZE
+	end
+	go.set_position(position)
 end
 
 
@@ -51,6 +67,6 @@ function random_direction(self)
 	local SCREEN_WIDTH = tonumber(sys.get_config("display.width"))
 	local SCREEN_HEIGHT = tonumber(sys.get_config("display.height"))
 	local position = go.get_position()
-	local target = vmath.vector3(math.random(SCREEN_WIDTH), math.random(SCREEN_HEIGHT), position.z)
+	local target = vmath.vector3(math.random(SCREEN_WIDTH - self.PADDING * 2) + self.PADDING, math.random(SCREEN_HEIGHT - self.PADDING * 2) + self.PADDING, position.z)
 	self.direction = vmath.normalize(target - position)
 end

@@ -1,7 +1,7 @@
 name: "game"
 instances {
   id: "score"
-  prototype: "/game_elements/score/score.go"
+  prototype: "/collections/game/score/score.go"
   position {
     x: 134.0
     y: 655.0
@@ -21,7 +21,7 @@ instances {
 }
 collection_instances {
   id: "ship"
-  collection: "/game_elements/ship/ship.collection"
+  collection: "/collections/game/ship/ship.collection"
   position {
     x: 640.0
     y: 360.0
@@ -44,7 +44,7 @@ embedded_instances {
   id: "background"
   data: "components {\n"
   "  id: \"background\"\n"
-  "  component: \"/game_elements/background/background.tilemap\"\n"
+  "  component: \"/common/background/background.tilemap\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -79,7 +79,7 @@ embedded_instances {
   id: "factories"
   data: "components {\n"
   "  id: \"factory_manager\"\n"
-  "  component: \"/collections/factory_manager.script\"\n"
+  "  component: \"/collections/game/factory_manager.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -95,7 +95,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"big_asteroid_factory\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/game_elements/asteroid/asteroid_big.go\\\"\\n"
+  "  data: \"prototype: \\\"/collections/game/asteroid/asteroid_big.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
@@ -113,7 +113,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"medium_asteroid_factory\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/game_elements/asteroid/asteroid_medium.go\\\"\\n"
+  "  data: \"prototype: \\\"/collections/game/asteroid/asteroid_medium.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
@@ -131,7 +131,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"small_asteroid_factory\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/game_elements/asteroid/asteroid_small.go\\\"\\n"
+  "  data: \"prototype: \\\"/collections/game/asteroid/asteroid_small.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
@@ -149,7 +149,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"explosion_factory\"\n"
   "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/game_elements/explosion/explosion.go\\\"\\n"
+  "  data: \"prototype: \\\"/collections/game/explosion/explosion.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"

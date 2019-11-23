@@ -1,8 +1,8 @@
 function init(self)
 	msg.post('.', 'acquire_input_focus')
 	msg.post("#title_proxy", "load")
-	self.state = 'title'
 end
+
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("proxy_loaded") then
@@ -21,19 +21,4 @@ function on_message(self, message_id, message, sender)
 		msg.post("#game_proxy", "unload")
 		msg.post("#gameover_proxy", "load")
 	end
-end
-
-function on_input(self, action_id, action)
-	--[[if action_id == hash('action') and action.pressed then
-		if self.state == 'title' then
-			self.state = 'game'
-			msg.post('.', 'load_game')
-		elseif self.state == 'game' then
-			self.state = 'gameover'
-			msg.post('.', 'load_gameover')
-		elseif self.state == 'gameover' then
-			self.state = 'title'
-			msg.post('.', 'load_title')
-		end
-	end--]]
 end
