@@ -15,12 +15,19 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash('big_destroyed') then
 		self.score = self.score + 5
+		msg.post('#yes', 'play_sound')
 	end
 	if message_id == hash('medium_destroyed') then
 		self.score = self.score + 10
+		msg.post('#awesome', 'play_sound')
 	end
 	if message_id == hash('small_destroyed') then
 		self.score = self.score + 30
+		msg.post('#wonderful', 'play_sound')
+	end
+	if message_id == hash('ufo_destroyed') then
+		self.score = self.score + 100
+		msg.post('#incredible', 'play_sound')
 	end
 	if message_id == hash('reset') then
 		self.score = 0

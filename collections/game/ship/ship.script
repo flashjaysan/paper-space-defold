@@ -70,7 +70,7 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash('collision_response') then
-		if message.other_group == hash('asteroid') then
+		if message.other_group == hash('asteroid') or message.other_group == hash('ufo') then
 			local position = go.get_position()
 			position.z = 0.01
 			factory.create('game:/factories#explosion_factory', position)

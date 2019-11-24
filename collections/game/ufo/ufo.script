@@ -1,22 +1,16 @@
 function init(self)
 	self.SIZE = 100
 	math.randomseed(os.time())
-	local random_image = math.random(4)
-	if random_image == 1 then
-		msg.post('#sprite', 'play_animation', {id = hash('asteroid_small2')})
-	elseif random_image == 2 then
-		msg.post('#sprite', 'play_animation', {id = hash('asteroid_small3')})
-	elseif random_image == 4 then
-		msg.post('#sprite', 'play_animation', {id = hash('asteroid_small4')})
-	end
 	self.SPEED = math.random(200) + 100
-	self.angular_speed = math.random(360) - 180
 	random_direction(self)
 end
 
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
 
 function update(self, dt)
-	go.set('.', 'euler.z', go.get('.', 'euler.z') + self.angular_speed * dt)
 	local position = go.get_position()
 	position.x = position.x + self.direction.x * self.SPEED * dt
 	position.y = position.y + self.direction.y * self.SPEED * dt
@@ -38,14 +32,23 @@ function update(self, dt)
 	go.set_position(position)
 end
 
-
 function on_message(self, message_id, message, sender)
 	if message_id == hash('collision_response') then
 		if message.other_group == hash('bullet') then
-			msg.post('score', 'small_destroyed')
+			msg.post('score', 'ufo_destroyed')
 			go.delete()
 		end
 	end
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
 end
 
 

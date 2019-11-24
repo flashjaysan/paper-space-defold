@@ -2,6 +2,8 @@ function init(self)
 	self.MIN_SPAWN_TIME = 1
 	self.spawn_time_to_reach = 3
 	self.spawn_timer = self.spawn_time_to_reach
+	self.ufo_timer = 0
+	self.UFO_SPAWN_TIME = 10
 end
 
 function final(self)
@@ -20,11 +22,16 @@ function update(self, dt)
 			self.spawn_time_to_reach = self.MIN_SPAWN_TIME
 		end
 	end
+	self.ufo_timer = self.ufo_timer + dt
+	if self.ufo_timer >= self.UFO_SPAWN_TIME then
+		self.ufo_timer = 0
+		factory.create('#ufo_factory', get_random_position())
+	end
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash('create_big_asteroid') then
-		factory.create('#big_asteroid_factory', go.get_position(sender))
+		factory.create('#big_asteroid_factory', get_random_position())
 	end
 	if message_id == hash('create_medium_asteroid') then
 		factory.create('#medium_asteroid_factory', go.get_position(sender))
@@ -44,4 +51,24 @@ end
 function on_reload(self)
 	-- Add reload-handling code here
 	-- Remove this function if not needed
+end
+
+function get_random_position()
+	local SCREEN_WIDTH = tonumber(sys.get_config("display.width"))
+	local SCREEN_HEIGHT = tonumber(sys.get_config("display.height"))
+	local position = vmath.vector3()
+	position.x = math.random(SCREEN_WIDTH)
+	position.y = math.random(SCREEN_HEIGHT)
+	position.z = 0.5
+	local border = math.random(4)
+	if border == 0 then
+		position.x = -100
+	elseif border == 1 then
+		position.x = SCREEN_WIDTH + 100
+	elseif border == 2 then
+		position.y = -100
+	else
+		position.y = SCREEN_HEIGHT + 100
+	end
+	return position
 end

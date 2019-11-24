@@ -43,6 +43,7 @@ embedded_components {
   "restitution: 0.5\n"
   "group: \"ship\"\n"
   "mask: \"asteroid\"\n"
+  "mask: \"ufo\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"

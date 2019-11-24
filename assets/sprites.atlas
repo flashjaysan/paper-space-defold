@@ -59,9 +59,6 @@ images {
   image: "/assets/zqsd.png"
 }
 images {
-  image: "/assets/press_start.png"
-}
-images {
   image: "/assets/gameover.png"
 }
 animations {
