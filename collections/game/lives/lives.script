@@ -1,0 +1,43 @@
+function init(self)
+	msg.post('#life1', 'enable')
+	msg.post('#life2', 'enable')
+	msg.post('#life3', 'enable')
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash('update_lives') then
+		if message.lives == 2 then		
+			msg.post('#life1', 'enable')
+			msg.post('#life2', 'enable')
+			msg.post('#life3', 'disable')
+		elseif message.lives == 1 then		
+			msg.post('#life1', 'enable')
+			msg.post('#life2', 'disable')
+			msg.post('#life3', 'disable')
+		elseif message.lives == 0 then
+			msg.post('#life1', 'disable')
+			msg.post('#life2', 'disable')
+			msg.post('#life3', 'disable')
+		end
+	end
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

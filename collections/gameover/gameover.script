@@ -1,6 +1,7 @@
 function init(self)
 	msg.post('.', 'acquire_input_focus')
 	go.animate('text#sprite1', 'scale', go.PLAYBACK_LOOP_PINGPONG, 1.1, go.EASING_INOUTSINE, 2)
+	msg.post('sound#no', 'play_sound')
 end
 
 

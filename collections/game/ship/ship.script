@@ -20,16 +20,19 @@ function init(self)
 	self.dy = 0
 	self.angle = go.get('.', 'euler.z')
 	self.position = go.get_position()
+	self.motor_is_playing = false
 end
 
 
 function reset(self)
 	self.lives = self.lives - 1
+	msg.post('game:/lives/lives#lives', 'update_lives', {lives = self.lives})
 	self.speed = 0
 	self.dx = 0
 	self.dy = 0
+	msg.post('#boom', 'play_sound')
 	go.set_position(vmath.vector3(tonumber(sys.get_config("display.width")) / 2, tonumber(sys.get_config("display.height")) / 2, 0.5))
-	if self.lives <= 0 then
+	if self.lives < 0 then
 		msg.post('main:/collections_manager', 'load_gameover')
 	end
 end
@@ -39,6 +42,7 @@ function update(self, dt)
 	self.angle = go.get('.', 'euler.z')
 	self.position = go.get_position()
 	set_angle_and_speed_from_input(self, dt)
+	manage_sound(self, dt)
 	calculate_velocity(self, dt)
 	set_position(self)
 	fire_bullet(self)
@@ -151,5 +155,18 @@ function fire_bullet(self)
 		--create a bullet
 		factory.create("/ship/bullets_factory#bullets_factory", vmath.vector3(self.position.x, self.position.y, self.position.z - 0.01), go.get_rotation(), {dx = math.cos(math.rad(self.angle)), dy = math.sin(math.rad(self.angle))})
 		self.action = false
+	end
+end
+
+function manage_sound(self, dt)
+	if self.speed <= 0 then
+		self.speed = 0
+		msg.post('#motor', 'stop_sound')
+		self.motor_is_playing = false
+	else
+		if not self.motor_is_playing then
+			msg.post('#motor', 'play_sound')
+			self.motor_is_playing = true
+		end
 	end
 end

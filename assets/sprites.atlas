@@ -59,10 +59,10 @@ images {
   image: "/assets/zqsd.png"
 }
 images {
-  image: "/assets/game_over.png"
+  image: "/assets/press_start.png"
 }
 images {
-  image: "/assets/press_start.png"
+  image: "/assets/gameover.png"
 }
 animations {
   id: "ship_thrust"
@@ -93,6 +93,25 @@ animations {
   }
   playback: PLAYBACK_ONCE_FORWARD
   fps: 5
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "new_record"
+  images {
+    image: "/assets/new_record1.png"
+  }
+  images {
+    image: "/assets/new_record2.png"
+  }
+  images {
+    image: "/assets/new_record3.png"
+  }
+  images {
+    image: "/assets/new_record4.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
   flip_horizontal: 0
   flip_vertical: 0
 }
