@@ -1,7 +1,8 @@
 function init(self)
 	self.SIZE = 100
 	math.randomseed(os.time())
-	self.SPEED = math.random(200) + 100
+	self.SPEED = math.random(200) + 300
+	msg.post('#sound', 'play_sound')
 	random_direction(self)
 end
 
@@ -36,6 +37,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash('collision_response') then
 		if message.other_group == hash('bullet') then
 			msg.post('score', 'ufo_destroyed')
+			msg.post('#sound', 'stop_sound')
 			go.delete()
 		end
 	end
@@ -56,6 +58,6 @@ function random_direction(self)
 	local SCREEN_WIDTH = tonumber(sys.get_config("display.width"))
 	local SCREEN_HEIGHT = tonumber(sys.get_config("display.height"))
 	local position = go.get_position()
-	local target = vmath.vector3(math.random(SCREEN_WIDTH), math.random(SCREEN_HEIGHT), position.z)
+	local target = vmath.vector3(math.random(SCREEN_WIDTH - self.SIZE * 2) + self.SIZE, math.random(SCREEN_HEIGHT - self.SIZE * 2) + self.SIZE, position.z)
 	self.direction = vmath.normalize(target - position)
 end
