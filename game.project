@@ -13,7 +13,7 @@ input_method = HiddenInputField
 
 [project]
 title = Paper Space
-version = 0.1.0
+version = 1.0.0
 
 [graphics]
 default_texture_min_filter = nearest
